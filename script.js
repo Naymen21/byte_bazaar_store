@@ -5,7 +5,7 @@ const storeInventory = [
     materials: ['metal','plastic'],
     price: 69.99,
     description: 'Mechanical Gaming Keyboard',
-    image: 'https://i.pinimg.com/1200x/72/0f/cb/720fcb457cfea06b95fca4c153f1b3d4.jpg'
+    image: 'hyperkeyboard.jpg'
   },
   {
     name: 'Logitech G203 Gaming Mouse',
@@ -13,7 +13,7 @@ const storeInventory = [
     materials: ['LED','plastic'],
     price: 49.00,
     description: 'LIGHTSYNC Wired 8000dpi',
-    image: 'https://i.pinimg.com/1200x/72/4e/9b/724e9b910b2b6b36a97d2bf71a753d10.jpg'
+    image: 'logitechmouse.jpg'
   },
   {
     name: 'Beats Studio Buds',
@@ -21,7 +21,7 @@ const storeInventory = [
     materials: ['sillicone','plastic'],
     price: 99.99,
     description: 'Wireless Noise Cancelling Earbuds',
-    image: 'https://i.pinimg.com/1200x/0d/3d/41/0d3d4140a9ce4566ba36f57694928add.jpg'
+    image: 'beatsheadphone.jpg'
   },
   {
     name: 'Wireless 3 in 1 Charger',
@@ -29,7 +29,7 @@ const storeInventory = [
     materials:['metal', 'plastic'],
     price: 49.99,
     description: 'Premium 3 in 1 multiple charger stand',
-    image: 'https://target.scene7.com/is/image/Target/GUEST_97e92039-8fb6-45cb-b376-2b0fd47da4b3?wid=1200&hei=1200&qlt=80'
+    image: 'wirelesscharger.png'
   },
   {
     name: 'Smart Light Bars',
@@ -37,7 +37,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 65.00,
     description:'Smart RBG multi use Light bars',
-    image: 'https://i.pinimg.com/736x/8e/dc/e7/8edce7a3902c23ebad64fca881a27343.jpg'
+    image: 'smartlightbar.jgp'
   },
   {
     name: 'USB C Hub',
@@ -45,7 +45,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 45.00,
     description:'Multi Usage UCB C Hub',
-    image: 'https://i.pinimg.com/736x/bc/69/8e/bc698e1d63908eacf716771aafa70aa7.jpg'
+    image: 'usbchub.jpg'
   },
   {
     name: 'Digital Writing Tablet',
@@ -53,7 +53,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 95.00,
     description:'Smooth touch drawing tablet',
-    image: 'https://i.pinimg.com/736x/e0/c6/86/e0c6861642146e0e6cb862335c9c836d.jpg'
+    image: 'writingtablet.jpg'
   },
   {
     name:'Mouse Pad',
@@ -61,7 +61,7 @@ const storeInventory = [
     materials: ['leather'],
     price:35.00,
     description:'High Quality no traction mouse pad',
-    image: 'https://i.pinimg.com/736x/ca/ce/87/cace87f6782793a2c6b338f26aafdf3c.jpg'
+    image: 'mousepad.jpg'
   },
   {
     name: 'Laptop Stand',
@@ -69,7 +69,7 @@ const storeInventory = [
     materials: ['metal','plastic'],
     price:100.00,
     description: 'High Quality Metal Stand',
-    image: 'https://i.pinimg.com/736x/25/3b/fa/253bfadfb3008ea04e8148202d33b132.jpg'
+    image: 'laptopstand.jpg'
   }
 ];
 
