@@ -5,7 +5,7 @@ const storeInventory = [
     materials: ['metal','plastic'],
     price: 69.99,
     description: 'Mechanical Gaming Keyboard',
-    image: 'hyperkeyboard.jpg'
+    image: 'images/hyperkeyboard.jpg'
   },
   {
     name: 'Logitech G203 Gaming Mouse',
@@ -13,7 +13,7 @@ const storeInventory = [
     materials: ['LED','plastic'],
     price: 49.00,
     description: 'LIGHTSYNC Wired 8000dpi',
-    image: 'logitechmouse.jpg'
+    image: 'images/logitechmouse.jpg'
   },
   {
     name: 'Beats Studio Buds',
@@ -21,7 +21,7 @@ const storeInventory = [
     materials: ['sillicone','plastic'],
     price: 99.99,
     description: 'Wireless Noise Cancelling Earbuds',
-    image: 'beatsheadphone.jpg'
+    image: 'images/beatsheadphone.jpg'
   },
   {
     name: 'Wireless 3 in 1 Charger',
@@ -29,7 +29,7 @@ const storeInventory = [
     materials:['metal', 'plastic'],
     price: 49.99,
     description: 'Premium 3 in 1 multiple charger stand',
-    image: 'wirelesscharger.png'
+    image: 'images/wirelesscharger.png'
   },
   {
     name: 'Smart Light Bars',
@@ -37,7 +37,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 65.00,
     description:'Smart RBG multi use Light bars',
-    image: 'smartlightbar.jgp'
+    image: 'images/smartlightbar.jgp'
   },
   {
     name: 'USB C Hub',
@@ -45,7 +45,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 45.00,
     description:'Multi Usage UCB C Hub',
-    image: 'usbchub.jpg'
+    image: 'images/usbchub.jpg'
   },
   {
     name: 'Digital Writing Tablet',
@@ -53,7 +53,7 @@ const storeInventory = [
     materials: ['plastic'],
     price: 95.00,
     description:'Smooth touch drawing tablet',
-    image: 'writingtablet.jpg'
+    image: 'images/writingtablet.jpg'
   },
   {
     name:'Mouse Pad',
@@ -61,7 +61,7 @@ const storeInventory = [
     materials: ['leather'],
     price:35.00,
     description:'High Quality no traction mouse pad',
-    image: 'mousepad.jpg'
+    image: 'images/mousepad.jpg'
   },
   {
     name: 'Laptop Stand',
@@ -69,7 +69,7 @@ const storeInventory = [
     materials: ['metal','plastic'],
     price:100.00,
     description: 'High Quality Metal Stand',
-    image: 'laptopstand.jpg'
+    image: 'images/laptopstand.jpg'
   }
 ];
 
