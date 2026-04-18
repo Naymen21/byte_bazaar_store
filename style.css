@@ -138,3 +138,11 @@ h1 {
 #nav-container {
   align-items: center;
 }
+
+#page-container {
+  display: flex;
+  justify-content: center;  
+  margin: 0 auto;          
+  width: fit-content;      
+  gap: 20px;                
+}
