@@ -159,6 +159,31 @@ h1 {
   white-space: nowrap;
 }
 
+.productnode {
+  position: relative;
+}
+
+.product-popup {
+  display: none;
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #FF6B00;
+  border: 2px solid #FF6B00;
+  padding: 8px 12px;
+  border-radius: 12px;
+  width: 170px;
+  font-size: 13px;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.productnode:hover .product-popup {
+  display: block;
+}
+
 #brand-logo:hover #logo-popup {
   display: block;
 }
