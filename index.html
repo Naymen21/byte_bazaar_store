@@ -1,51 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <title>ByteBazaar</title>
+<header id="main-nav">
+  <div id="nav-container">
+    <div id="brand-logo">
+      <img src="https://videos.openai.com/az/vg-assets/task_01kpgmfjf8erd8zmetemf3j49c%2F1776527346_img_1.webp?se=2026-04-24T15%3A00%3A00Z&sp=r&sv=2026-02-06&sr=b&skoid=aa5ddad1-c91a-4f0a-9aca-e20682cc8969&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-04-18T12%3A59%3A27Z&ske=2026-04-25T13%3A04%3A27Z&sks=b&skv=2026-02-06&sig=3VnAvyxZ/HXsJsKnYqhbVeQmRCeiv6smwRm5XdqYYuo%3D&ac=oaivgprodscus2" alt="Logo">
+      <div id="logo-popup">Welcome to ByteBazaar</div>
+    </div>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<body>
+<div id="storename">
+  <h1>ByteBazaar</h1>
+  <div id="page-container">
+    <div id="product" class="image-grid"></div>
+    <div id="cart">
+      <div id="cart-total">Total: $0.00</div>
+      <div id="cart-items">Customer Order</div>
+    </div>
+  </div>
+</div>
 
-  <header>
-    <div id="main-nav">
-      <div id="nav-container">
-        <div id="brand-logo">
-          <img src="https://github.com/Naymen21/byte_bazaar_store/blob/main/images/bytebazaar_logo.png?raw=true" alt="ByteBazaar Logo">
-          <div id="logo-popup">Welcome to ByteBazaar</div>
-        </div>
+<div id="checkout-overlay" class="hidden">
+  <div id="checkout-modal">
 
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
+    <h2>Checkout</h2>
+
+    <section>
+      <h3>Order Summary</h3>
+      <div id="checkout-summary"></div>
+      <h3 id="checkout-total"></h3>
+    </section>
+
+    <section>
+      <h3>Delivery Information</h3>
+      <input placeholder="Full Name" />
+      <input placeholder="Email" />
+      <input placeholder="Address" />
+      <input placeholder="City" />
+      <input placeholder="State" />
+      <input placeholder="ZIP Code" />
+    </section>
+
+    <section>
+      <h3>Payment Information</h3>
+      <input placeholder="Name on Card" />
+      <input placeholder="Card Number" />
+      <div style="display:flex; gap:10px;">
+        <input placeholder="Expiry Date" />
+        <input placeholder="CVV" />
       </div>
+    </section>
+
+    <div class="checkout-buttons">
+      <button id="place-order">Complete Order</button>
+      <button id="back-cart">Back to Cart</button>
     </div>
 
-    <div id="storename">
-      <h1>ByteBazaar</h1>
-    </div>
-  </header>
+  </div>
+</div>
 
-  <main>
-    <div id="page-container">
-      <div id="product" class="image-grid"></div>
+<div id="checkout-overlay" class="hidden">
+  <div id="checkout-modal">
 
-      <div id="cart">
-        <div id="cart-total">Total: $0.00</div>
-        <div id="cart-items">Customer Order</div>
+    <h2>Checkout</h2>
+
+    <section>
+      <h3>Order Summary</h3>
+      <div id="checkout-summary"></div>
+      <h3 id="checkout-total"></h3>
+    </section>
+
+    <section>
+      <h3>Delivery Information</h3>
+      <input placeholder="Full Name" />
+      <input placeholder="Email" />
+      <input placeholder="Address" />
+      <input placeholder="City" />
+      <input placeholder="State" />
+      <input placeholder="ZIP Code" />
+    </section>
+
+    <section>
+      <h3>Payment Information</h3>
+      <input placeholder="Name on Card" />
+      <input placeholder="Card Number" />
+      <div style="display:flex; gap:10px;">
+        <input placeholder="Expiry Date" />
+        <input placeholder="CVV" />
       </div>
-    </div>
-  </main>
+    </section>
 
-</body>
-</html>
+    <div class="checkout-buttons">
+      <button id="place-order">Complete Order</button>
+      <button id="back-cart">Back to Cart</button>
+    </div>
+
+  </div>
+</div>
