@@ -154,12 +154,19 @@ storeInventory.forEach((item, index) => {
   productDiv.innerHTML += `
     <div class="productnode">
       <img src="${item.image}">
+      
+      <div class="product-popup">
+        ${item.description}
+      </div>
+
       <br><br>
       ${item.name}<br>
       $${item.price.toFixed(2)}<br>
+
       <button class="rounded-button" onclick="addToCart(${index})">
         Add to Cart
       </button>
     </div>
   `;
 });
+
