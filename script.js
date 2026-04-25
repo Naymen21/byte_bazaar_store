@@ -73,17 +73,33 @@ const storeInventory = [
   }
 ];
 
+const checkoutOverlay = document.getElementById("checkout-overlay");
+const checkoutSummary = document.getElementById("checkout-summary");
+const checkoutTotal = document.getElementById("checkout-total");
+const backCartBtn = document.getElementById("back-cart");
+const placeOrderBtn = document.getElementById("place-order");
+
 const productDiv = document.getElementById("product");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 
 let cart = {};
 
+const toast = document.createElement("div");
+toast.className = "toast";
+toast.innerText = "Added to cart";
+document.body.appendChild(toast);
+
+function showToast() {
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
 function addToCart(index) {
   const item = storeInventory[index];
 
   if (cart[item.name]) {
-    cart[item.name].quantity += 1;
+    cart[item.name].quantity++;
   } else {
     cart[item.name] = {
       name: item.name,
@@ -94,6 +110,7 @@ function addToCart(index) {
   }
 
   updateCart();
+  showToast();
 }
 
 function updateCart() {
@@ -116,7 +133,7 @@ function updateCart() {
       </div>
 
       <div class="quantity-controls">
-        <button onclick="decreaseItem('${itemName}')">-</button>
+        <button onclick="decreaseItem('${itemName}')">−</button>
         <span>${item.quantity}</span>
         <button onclick="increaseItem('${itemName}')">+</button>
       </div>
@@ -128,45 +145,78 @@ function updateCart() {
   }
 
   cartTotal.innerText = `Total: $${total.toFixed(2)}`;
+
+  const checkoutBtn = document.createElement("button");
+  checkoutBtn.className = "checkout-btn";
+  checkoutBtn.innerText = "Secure Checkout";
+
+  checkoutBtn.onclick = openCheckout;
+
+  cartItems.appendChild(checkoutBtn);
 }
 
-function increaseItem(itemName) {
-  cart[itemName].quantity++;
-  updateCart();
-}
+function openCheckout() {
+  checkoutOverlay.classList.remove("hidden");
 
-function decreaseItem(itemName) {
-  cart[itemName].quantity--;
+  checkoutSummary.innerHTML = "";
+  let total = 0;
 
-  if (cart[itemName].quantity <= 0) {
-    delete cart[itemName];
+  for (let itemName in cart) {
+    const item = cart[itemName];
+    total += item.price * item.quantity;
+
+    checkoutSummary.innerHTML += `
+      <p>${item.name} × ${item.quantity} — $${(item.price * item.quantity).toFixed(2)}</p>
+    `;
   }
 
+  checkoutTotal.innerText = `Final Total: $${total.toFixed(2)}`;
+}
+
+backCartBtn.onclick = () => {
+  checkoutOverlay.classList.add("hidden");
+};
+
+placeOrderBtn.onclick = () => {
+  alert("Order placed successfully!");
+
+  cart = {};
+  updateCart();
+
+  checkoutOverlay.classList.add("hidden");
+};
+
+function increaseItem(name) {
+  cart[name].quantity++;
   updateCart();
 }
 
-function removeItem(itemName) {
-  delete cart[itemName];
+function decreaseItem(name) {
+  cart[name].quantity--;
+  if (cart[name].quantity <= 0) delete cart[name];
+  updateCart();
+}
+
+function removeItem(name) {
+  delete cart[name];
   updateCart();
 }
 
 storeInventory.forEach((item, index) => {
   productDiv.innerHTML += `
-    <div class="productnode">
+    <div class="productnode" style="animation-delay:${index * 0.08}s">
       <img src="${item.image}">
-      
+
       <div class="product-popup">
         ${item.description}
       </div>
 
-      <br><br>
-      ${item.name}<br>
-      $${item.price.toFixed(2)}<br>
+      <h3>${item.name}</h3>
+      <p>$${item.price.toFixed(2)}</p>
 
       <button class="rounded-button" onclick="addToCart(${index})">
-        Add to Cart
+        Add To Cart
       </button>
     </div>
   `;
 });
-
