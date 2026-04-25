@@ -79,37 +79,6 @@ const cartTotal = document.getElementById("cart-total");
 
 let cart = {};
 
-function updateCart() {
-  cartItems.innerHTML = "";
-  let total = 0;
-
-  for (let itemName in cart) {
-    const item = cart[itemName];
-    total += item.price * item.quantity;
-
-    const div = document.createElement("div");
-    div.className = "cart-item";
-
-    div.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <div>
-        <strong>${item.name}</strong><br>
-        $${item.price.toFixed(2)} x ${item.quantity}
-      </div>
-      <div class="quantity-controls">
-        <button onclick="decreaseItem('${itemName}')">-</button>
-        <span>${item.quantity}</span>
-        <button onclick="increaseItem('${itemName}')">+</button>
-      </div>
-      <button onclick="removeItem('${itemName}')">X</button>
-    `;
-
-    cartItems.appendChild(div);
-  }
-
-  cartTotal.innerText = `Total: $${total.toFixed(2)}`;
-}
-
 function addToCart(index) {
   const item = storeInventory[index];
 
@@ -127,16 +96,52 @@ function addToCart(index) {
   updateCart();
 }
 
+function updateCart() {
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  for (let itemName in cart) {
+    const item = cart[itemName];
+    total += item.price * item.quantity;
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+
+    div.innerHTML = `
+      <img src="${item.image}">
+      
+      <div class="cart-item-details">
+        <strong>${item.name}</strong><br>
+        $${item.price.toFixed(2)}
+      </div>
+
+      <div class="quantity-controls">
+        <button onclick="decreaseItem('${itemName}')">-</button>
+        <span>${item.quantity}</span>
+        <button onclick="increaseItem('${itemName}')">+</button>
+      </div>
+
+      <button class="delete-button" onclick="removeItem('${itemName}')">🗑️</button>
+    `;
+
+    cartItems.appendChild(div);
+  }
+
+  cartTotal.innerText = `Total: $${total.toFixed(2)}`;
+}
+
 function increaseItem(itemName) {
-  cart[itemName].quantity += 1;
+  cart[itemName].quantity++;
   updateCart();
 }
 
 function decreaseItem(itemName) {
-  cart[itemName].quantity -= 1;
+  cart[itemName].quantity--;
+
   if (cart[itemName].quantity <= 0) {
     delete cart[itemName];
   }
+
   updateCart();
 }
 
@@ -149,10 +154,12 @@ storeInventory.forEach((item, index) => {
   productDiv.innerHTML += `
     <div class="productnode">
       <img src="${item.image}">
-      <br>
+      <br><br>
       ${item.name}<br>
       $${item.price.toFixed(2)}<br>
-      <button class="rounded-button" onclick="addToCart(${index})">add to cart</button>
+      <button class="rounded-button" onclick="addToCart(${index})">
+        Add to Cart
+      </button>
     </div>
   `;
 });
